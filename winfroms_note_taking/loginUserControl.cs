@@ -25,6 +25,11 @@ namespace winfroms_note_taking
         public loginUserControl()
         {
             InitializeComponent();
+            loadUserData();
+        }
+
+        private void loadUserData()
+        {
             var usernames = (from k in _context.Users
                              select k.Username).ToList();
             usernamesList.AddRange(usernames);
@@ -71,12 +76,16 @@ namespace winfroms_note_taking
 
             if (usernamesList.Contains(enteredUsername))
             {
-                var correctPassword = (from k in _context.Users
+                var hashedcorrectPassword = (from k in _context.Users
                                        where k.Username == enteredUsername
                                        select k.Password).ToList();
                 panel7.Visible = false;
 
-                if (enteredPassword == correctPassword[0])
+
+
+                bool passwordCorrect = BCrypt.Net.BCrypt.Verify(enteredPassword, hashedcorrectPassword[0]);
+
+                if (passwordCorrect)
                 {
                     loggedInUser = (from k in _context.Users
                                     where k.Username == enteredUsername
@@ -114,14 +123,32 @@ namespace winfroms_note_taking
 
         private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
         {
-            login();
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
         }
 
         private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            login();
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormSignUp formSignUp = new FormSignUp();
+
+            formSignUp.FormClosed += FormSignUp_FormClosed;
+
+            formSignUp.ShowDialog();
+        }
+
+        private void FormSignUp_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            loadUserData();
+        }
     }
 }

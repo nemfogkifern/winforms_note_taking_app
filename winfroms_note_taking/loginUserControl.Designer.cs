@@ -53,6 +53,7 @@
             panel7 = new Panel();
             label4 = new Label();
             panelLogin = new Panel();
+            button2 = new Button();
             panel2.SuspendLayout();
             panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -140,7 +141,7 @@
             panel4.Controls.Add(textBoxUsername);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(panel3);
-            panel4.Location = new Point(43, 133);
+            panel4.Location = new Point(43, 98);
             panel4.Name = "panel4";
             panel4.Size = new Size(400, 51);
             panel4.TabIndex = 4;
@@ -194,7 +195,7 @@
             // 
             panel8.BackColor = Color.Transparent;
             panel8.Controls.Add(label5);
-            panel8.Location = new Point(43, 274);
+            panel8.Location = new Point(43, 239);
             panel8.Name = "panel8";
             panel8.Size = new Size(400, 33);
             panel8.TabIndex = 9;
@@ -221,7 +222,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(133, 332);
+            button1.Location = new Point(133, 297);
             button1.Name = "button1";
             button1.Size = new Size(215, 43);
             button1.TabIndex = 7;
@@ -234,7 +235,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(177, 74);
+            label1.Location = new Point(177, 39);
             label1.Name = "label1";
             label1.Size = new Size(127, 54);
             label1.TabIndex = 0;
@@ -247,7 +248,7 @@
             panel5.Controls.Add(textBoxPassword);
             panel5.Controls.Add(label3);
             panel5.Controls.Add(panel6);
-            panel5.Location = new Point(43, 225);
+            panel5.Location = new Point(43, 190);
             panel5.Name = "panel5";
             panel5.Size = new Size(400, 60);
             panel5.TabIndex = 6;
@@ -301,7 +302,7 @@
             // 
             panel7.BackColor = Color.Transparent;
             panel7.Controls.Add(label4);
-            panel7.Location = new Point(43, 184);
+            panel7.Location = new Point(43, 149);
             panel7.Name = "panel7";
             panel7.Size = new Size(400, 27);
             panel7.TabIndex = 8;
@@ -320,6 +321,7 @@
             // 
             // panelLogin
             // 
+            panelLogin.Controls.Add(button2);
             panelLogin.Controls.Add(panel4);
             panelLogin.Controls.Add(panel8);
             panelLogin.Controls.Add(button1);
@@ -332,6 +334,24 @@
             panelLogin.Size = new Size(532, 481);
             panelLogin.TabIndex = 3;
             panelLogin.PreviewKeyDown += panelLogin_PreviewKeyDown;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.FlatAppearance.BorderColor = Color.FromArgb(211, 203, 37);
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(160, 154, 29);
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 233, 154);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(133, 359);
+            button2.Name = "button2";
+            button2.Size = new Size(215, 43);
+            button2.TabIndex = 10;
+            button2.Text = "Sign up";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // loginUserControl
             // 
@@ -387,5 +407,6 @@
         private PictureBox pictureBox3;
         private Label label6;
         private Panel panel10;
+        private Button button2;
     }
 }
